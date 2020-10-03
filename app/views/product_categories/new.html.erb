@@ -1,0 +1,5 @@
+<%= simple_form_for [@product_category] do |f|%>
+  <%= f.input :naam, placeholder: 'Naam van product categorie' %>
+  <%= f.input :photo, placeholder: 'Kies foto' %>
+  <div class="save-btn"><%= f.button :submit, "Opslaan" %></div>
+<% end %>

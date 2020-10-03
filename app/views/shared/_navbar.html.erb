@@ -31,9 +31,13 @@
 
     </ul>
       <div class="login-item" style="background-color: transparent">
-      <%= link_to new_user_session_path do %>
-        Log in
-      <% end %>
+        <% if !user_signed_in? %>
+          <%= link_to new_user_session_path do %>
+            Log in
+          <% end %>
+        <% else %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <% end %>
       </div>
   </div>
 </nav>
