@@ -9,40 +9,12 @@
 </div>
 
 <div class="product-categories-container">
+  <% ProductCategory.all.each do |category| %>
   <div class="product-category-box">
   <div class="product-category-card">
-    <%= image_tag("test.jpg") %>
-    <p><b> Omschrijving</b></p>
+    <%= cl_image_tag category.photo.key, height: 300, width: 400, crop: :fill, class:"card-item" %>
+    <p><b><%= category.naam %></b></p>
   </div>
   </div>
-  <div class="product-category-box">
-  <div class="product-category-card">
-    <%= image_tag("test.jpg") %>
-    <p><b> Omschrijving</b></p>
-  </div>
-  </div>
-  <div class="product-category-box">
-  <div class="product-category-card">
-    <%= image_tag("test.jpg") %>
-    <p><b> Omschrijving</b></p>
-  </div>
-  </div>
-  <div class="product-category-box">
-  <div class="product-category-card">
-    <%= image_tag("test.jpg") %>
-    <p><b> Omschrijving</b></p>
-  </div>
-  </div>
-  <div class="product-category-box">
-  <div class="product-category-card">
-    <%= image_tag("test.jpg") %>
-    <p><b> Omschrijving</b></p>
-  </div>
-  </div>
-  <div class="product-category-box">
-  <div class="product-category-card">
-    <%= image_tag("test.jpg") %>
-    <p><b> Omschrijving</b></p>
-  </div>
-  </div>
+  <% end %>
 </div>

@@ -1,6 +1,6 @@
 .product_category-form-container{
   background-color: #EEF7EF;
-  padding: 15% 25%;
+  padding: 10% 25%;
   height: 900px;
   .product_category-form{
     background-color: white;
@@ -19,5 +19,15 @@
   }
   h3{
     text-align: center;
+  }
+
+  .product_category-form-items{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    border-style: solid;
+    border-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

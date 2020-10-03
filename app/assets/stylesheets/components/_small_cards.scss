@@ -1,0 +1,22 @@
+.new-small-card-container{
+  display: flex;
+  justify-content: center;
+.new-small-card{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 2%;
+  background-color: white;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: green;
+  a{
+    text-decoration: none !important;
+    color: green;
+  }
+  .far{
+    color: green;
+  }
+}
+}

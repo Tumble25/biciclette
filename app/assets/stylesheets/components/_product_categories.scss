@@ -52,3 +52,9 @@
     color: white;
   }
 }
+
+.card-item:hover{
+  border-style: solid;
+  border-color: green;
+  border-width: 3px;
+}

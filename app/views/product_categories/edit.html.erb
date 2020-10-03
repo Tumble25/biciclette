@@ -16,4 +16,19 @@
   </div>
 <% end %>
 </div>
+<br>
+<div class="product_category-form-items">
+  <div class="new-small-card-container">
+  <div class="new-small-card">
+    <i class="far fa-plus-square fa-5x"></i>
+    <p></p>
+    Nieuw
+  </div>
+  </div>
+  <% @product_category.products.each do |product| %>
+  <%= cl_image_tag photo.key.first, height: 300, width: 400, crop: :fill %>
+  <%= product.naam %>
+  <%= product.prijs %>
+  <% end %>
+</div>
 </div>

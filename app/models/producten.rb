@@ -1,2 +1,0 @@
-class Producten < ApplicationRecord
-end
