@@ -1,5 +1,46 @@
 .dashboard-container{
   background-color: #EEF7EF;
   height: 900px;
-  padding: 10%;
+  padding: 0% 10%;
+  color: black;
+  .dashboard-products-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .far{
+      color: green;
+    }
+  .product-category-box{
+    margin-top: 5%;
+    height: 300px;
+    // width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10%;
+    a{
+      text-decoration: none !important;
+      color: black;
+    }
+  }
+  .product-category-box:hover{
+    a{
+      color: white;
+    }
+    .far{
+      color:white;
+    }
+  }
+  .product-category-card{
+    img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    // border-style: solid;
+    // border-color: #facfee;
+    }
+    img:hover{
+      // border-color: black;
+    }
+  }
+}
 }
