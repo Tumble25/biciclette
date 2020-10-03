@@ -30,15 +30,21 @@
       </li>
 
     </ul>
-      <div class="login-item" style="background-color: transparent">
         <% if !user_signed_in? %>
+        <div class="login-item" style="background-color: transparent">
           <%= link_to new_user_session_path do %>
             Log in
           <% end %>
         <% else %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <!-- <li class="nav-item navbar-home-item landing-page-navbar-right-item"> -->
+          <div class="nav-link">
+            <%= link_to "Dashboard", product_categories_path, class: "dropdown-item" %>
+          </div>
+        <!-- </li> -->
+        <div class="login-item" style="background-color: transparent">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         <% end %>
-      </div>
+        </div>
   </div>
 </nav>
 
