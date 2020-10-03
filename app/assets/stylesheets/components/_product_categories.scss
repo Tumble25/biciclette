@@ -1,0 +1,25 @@
+.product-categories-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .product-category-box{
+    margin-top: 5%;
+    height: 300px;
+    // width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10%;
+  }
+  .product-category-card{
+    img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    // border-style: solid;
+    // border-color: #facfee;
+    }
+    img:hover{
+      // border-color: black;
+    }
+  }
+}

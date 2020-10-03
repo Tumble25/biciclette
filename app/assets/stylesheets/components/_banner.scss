@@ -1,0 +1,12 @@
+.banner-container{
+  background-color: #EEF7EF;
+  padding: 5% 10%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Alegreya Sans', sans-serif;
+  // border-radius: 0 0 10px 10px;
+  .banner-text{
+    width: 50%;
+    text-align: center;
+  }
+}
