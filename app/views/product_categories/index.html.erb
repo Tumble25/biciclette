@@ -3,6 +3,6 @@
 new
 <% end %>
 <% @product_categories.each do |category| %>
-hi
+  <%= cl_image_tag category.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 </div>
