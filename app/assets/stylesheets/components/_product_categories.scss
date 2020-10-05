@@ -1,3 +1,16 @@
+.dashboard-categorie-opties{
+  margin-top: 2%;
+  .fa-edit{
+    color: green
+  }
+  .verwijder{
+    color: red;
+  }
+  p{
+    margin-bottom: 0 !important;
+  }
+}
+
 .product-categories-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

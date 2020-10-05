@@ -35,8 +35,19 @@ class ProductCategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @product_category = ProductCategory.find(params[:id])
+    if @product_category.destroy
+      redirect_to product_categories_path, success: "Product categorie verwijdert"
+    else
+      redirect_to product_categories_path, error: "Er is iets fout gegaan"
+    end
+  end
+
   private
   def product_category_params
-    params.require(:product_category).permit(:id, :naam, :photo)
+    params.require(:product_category).permit(:id, :naam, :photo,
+      products_attributes: [:id, :naam, :omschrijving, :prijs])
   end
 end

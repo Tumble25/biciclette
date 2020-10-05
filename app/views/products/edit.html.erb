@@ -1,0 +1,23 @@
+<div class="product_category-form-container">
+<div class="product_category-form">
+  <h3>Nieuw product</h3>
+
+<%= simple_form_for [@product_category, @product] do |f|%>
+<div class="col-12">
+  <%= f.input :naam, placeholder: 'Product' %>
+</div>
+
+<div class="col-12">
+  <%= f.input :omschrijving, placeholder: 'Omschrijving',:input_html => {:style => 'width: 100%', :rows => 5} %>
+</div>
+
+<div class="col-12">
+  <%= f.input :prijs, placeholder: 'Prijs van product' %>
+</div>
+<br>
+  <div class="col-12">
+  <%= f.button :submit, "Opslaan", class:"save-btn" %>
+  </div>
+<% end %>
+</div>
+</div>
