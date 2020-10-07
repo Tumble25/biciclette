@@ -29,9 +29,11 @@
   <% end %>
   <% @product_category.products.each do |product| %>
   <%= link_to edit_product_category_product_path(@product_category, product ) do %>
-  <%#= cl_image_tag photo.key.first, height: 300, width: 400, crop: :fill %>
-  <%= product.naam %>
-  <%= product.prijs %>
+    <div class="new-small-card-container">
+    <%= cl_image_tag product.product_photos.first, height: 100, width: 100, crop: :fill %>
+  </div>
+    <%= product.naam %>
+    <%= product.prijs %>
   <% end %>
   <% end %>
 </div>

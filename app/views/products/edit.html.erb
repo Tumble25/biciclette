@@ -14,6 +14,16 @@
 <div class="col-12">
   <%= f.input :prijs, placeholder: 'Prijs van product' %>
 </div>
+
+<% f.fields_for :product_photos do |product_photo| %>
+<!-- <div> -->
+  <%= render 'product_photo_fields', f: product_photo %>
+<% end %>
+
+<div class="bla">
+  <%= link_to_add_association 'add discount', f, :product_photos %>
+</div>
+
 <br>
   <div class="col-12">
   <%= f.button :submit, "Opslaan", class:"save-btn" %>

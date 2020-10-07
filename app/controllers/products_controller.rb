@@ -1,14 +1,10 @@
 class ProductsController < ApplicationController
 
-  # def index
-  #   @user = current_user
-  #   @products = Product.all
-  # end
-
   def new
     @user = current_user
     @product_category = ProductCategory.find(params[:product_category_id])
     @product = Product.new
+    # @product.product_photos.build
   end
 
   def create
@@ -52,6 +48,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:id, :naam, :omschrijving, :prijs, :product_category_id)
+    params.require(:product).permit(:id, :naam, :omschrijving, :prijs, :product_category_id, product_photos_attributes: [:id, :photo, :product_id, :_destroy])
   end
 end
