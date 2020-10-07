@@ -30,7 +30,11 @@
   <% @product_category.products.each do |product| %>
   <%= link_to edit_product_category_product_path(@product_category, product ) do %>
     <div class="new-small-card-container">
-    <%= cl_image_tag product.product_photos.first, height: 100, width: 100, crop: :fill %>
+      <% if product.product_photos.last.photo? %>
+    <%= cl_image_tag product.product_photos.last.photo, height: 100, width: 100, crop: :fill %>
+    <% else %>
+      <div class="new-small-card">
+    <% end %>
   </div>
     <%= product.naam %>
     <%= product.prijs %>

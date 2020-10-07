@@ -17,18 +17,22 @@
 
 <!-- start cocoon -->
 
-<% f.fields_for :product_photos do |product_photo| %>
-<!-- <div> -->
+<div id="wrapper-nested-fields">
+<%= f.simple_fields_for :product_photos do |product_photo| %>
+  <div class="reservation-details">
   <%= render 'product_photo_fields', f: product_photo %>
+</div>
 <% end %>
 
-<div class="bla">
-  <%= link_to_add_association 'add discount', f, :product_photos %>
+<div>
+<%= link_to_add_association f, :product_photos do %>
+  <div class="option-add-option-price">
+    <div class="prices-border col-lg-7">
+      <i class="fas fa-plus"></i> Voeg foto toe
+    </div>
+  </div>
+  <% end %>
 </div>
-<!-- </div> -->
-
-  <!-- </div> -->
-  <!-- </div> -->
 <!-- end cocoon -->
 
 <br>
