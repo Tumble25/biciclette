@@ -22,10 +22,10 @@
   <div class="new-small-card-container">
   <div class="new-small-card">
     <i class="far fa-plus-square fa-5x"></i>
-    <p></p>
-    Nieuw
+    <!-- <p></p> -->
   </div>
   </div>
+    <p> Nieuw</p>
   <% end %>
   <% @product_category.products.each do |product| %>
   <%= link_to edit_product_category_product_path(@product_category, product ) do %>
@@ -43,10 +43,10 @@
       <div class="new-small-card-no-photo">
         <i class="fas fa-exclamation-triangle fa-5x"></i>
         <p></p>
+      </div>
+      </div>
         <p> <%= product.naam %></p>
         <p> <%= product.prijs %></p>
-      </div>
-      </div>
     <% end %>
     <!-- </div> -->
   <% end %>
