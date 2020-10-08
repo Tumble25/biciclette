@@ -32,6 +32,7 @@
     <p> Nieuw</p>
   <% end %>
   </div>
+
   <% @product_category.products.each do |product| %>
   <div class="product-category-overview-item">
   <%= link_to edit_product_category_product_path(@product_category, product ) do %>

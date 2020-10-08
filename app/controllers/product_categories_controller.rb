@@ -5,6 +5,10 @@ class ProductCategoriesController < ApplicationController
     @product_categories = ProductCategory.all
   end
 
+  def show
+    @product_category = ProductCategory.find(params[:id])
+  end
+
   def new
     @user = current_user
     @product_category = ProductCategory.new

@@ -19,6 +19,9 @@
 .product-categories-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  a{
+    text-decoration: none !important;
+  }
   .product-category-box{
     margin-top: 5%;
     height: 300px;
@@ -38,6 +41,10 @@
     }
     img:hover{
       // border-color: black;
+    }
+    p{
+      color: black;
+    // }
     }
   }
 }
