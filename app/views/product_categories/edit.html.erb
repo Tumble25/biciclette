@@ -29,15 +29,26 @@
   <% end %>
   <% @product_category.products.each do |product| %>
   <%= link_to edit_product_category_product_path(@product_category, product ) do %>
-    <div class="new-small-card-container">
-      <% if product.product_photos.last.photo? %>
-    <%= cl_image_tag product.product_photos.last.photo, height: 100, width: 100, crop: :fill %>
+    <!-- <div class="new-small-card-container"> -->
+      <% if product.product_photos.any? %>
+      <div class="new-small-card-container">
+        <%= cl_image_tag product.product_photos.last.photo, height: 100, width: 100, crop: :fill %>
+      </div>
+        <div class="small-card-text">
+        <p> <%= product.naam %></p>
+        <p> <%= product.prijs %></p>
+        </div>
     <% else %>
-      <div class="new-small-card">
+    <div class="new-small-card-container">
+      <div class="new-small-card-no-photo">
+        <i class="fas fa-exclamation-triangle fa-5x"></i>
+        <p></p>
+        <p> <%= product.naam %></p>
+        <p> <%= product.prijs %></p>
+      </div>
+      </div>
     <% end %>
-  </div>
-    <%= product.naam %>
-    <%= product.prijs %>
+    <!-- </div> -->
   <% end %>
   <% end %>
 </div>
