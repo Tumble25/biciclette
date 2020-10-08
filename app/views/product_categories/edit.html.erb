@@ -1,7 +1,9 @@
 <div class="product_category-form-container">
 <div class="product_category-form">
   <h3>Nieuwe product categorie</h3>
-
+  <div class="terug-text">
+  <%= link_to "(terug zonder opslaan)", product_categories_path %>
+</div>
 <%= simple_form_for [@product_category] do |f|%>
 <div class="col-12">
   <%= f.input :naam, placeholder: 'Naam van product categorie' %>
@@ -15,9 +17,11 @@
   <%= f.button :submit, "Opslaan", class:"save-btn" %>
   </div>
 <% end %>
+
 </div>
 <br>
 <div class="product_category-form-items">
+  <div class="product-category-overview-item">
   <%= link_to new_product_category_product_path(@product_category) do %>
   <div class="new-small-card-container">
   <div class="new-small-card">
@@ -27,7 +31,9 @@
   </div>
     <p> Nieuw</p>
   <% end %>
+  </div>
   <% @product_category.products.each do |product| %>
+  <div class="product-category-overview-item">
   <%= link_to edit_product_category_product_path(@product_category, product ) do %>
     <!-- <div class="new-small-card-container"> -->
       <% if product.product_photos.any? %>
@@ -36,7 +42,7 @@
       </div>
         <div class="small-card-text">
         <p> <%= product.naam %></p>
-        <p> <%= product.prijs %></p>
+        <p> <%= number_to_currency(product.prijs, unit: "€", separator: ",", delimiter: "") %></p>
         </div>
     <% else %>
     <div class="new-small-card-container">
@@ -46,10 +52,15 @@
       </div>
       </div>
         <p> <%= product.naam %></p>
-        <p> <%= product.prijs %></p>
+        <p> <%= number_to_currency(product.prijs, unit: "€", separator: ",", delimiter: "") %></p>
     <% end %>
-    <!-- </div> -->
   <% end %>
+  <%= link_to product_category_product_path(@product_category, product ),
+  method: :delete,
+  data: {confirm: t('.delete_confirm')} do %>
+      <p class=verwijder>verwijder</p>
+  <% end %>
+  </div>
   <% end %>
 </div>
 </div>

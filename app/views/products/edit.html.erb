@@ -16,7 +16,7 @@
 </div>
 
 <div id="wrapper-nested-fields">
-<%= f.simple_fields_for :product_photos do |product_photo| %>
+<%= f.fields_for :product_photos do |product_photo| %>
   <div class="reservation-details">
   <%= render 'product_photo_fields', f: product_photo %>
 </div>
@@ -37,6 +37,7 @@
   <%= f.button :submit, "Opslaan", class:"save-btn" %>
   </div>
 <% end %>
+
 </div>
 </div>
 </div>

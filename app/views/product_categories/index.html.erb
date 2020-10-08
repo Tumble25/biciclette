@@ -19,10 +19,14 @@
         <% if !category.photo.attachment.nil? %>
         <%= cl_image_tag category.photo.key, height: 300, width: 400, crop: :fill, class:"card-item" %>
         <% else %>
-          No photo
+          <div class="no-product-category-image">
+            <i class="fas fa-exclamation-triangle fa-5x"></i>
+            <p></p>
+            <p> Geen foto </p>
+          </div>
         <% end %>
         <% end %>
-        <br>
+        <!-- <br> -->
         <div class="dashboard-categorie-opties">
 
         <p> <%= category.naam %></p>
