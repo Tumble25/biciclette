@@ -12,7 +12,11 @@
   <% ProductCategory.all.each do |category| %>
   <div class="product-category-box">
   <div class="product-category-card">
+    <% if !category.photo.attachment.nil? %>
     <%= cl_image_tag category.photo.key, height: 300, width: 400, crop: :fill, class:"card-item" %>
+    <% else %>
+      No photo
+    <% end %>
     <p><b><%= category.naam %></b></p>
   </div>
   </div>

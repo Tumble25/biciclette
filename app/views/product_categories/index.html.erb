@@ -16,13 +16,15 @@
     <div class="product-category-box">
       <%= link_to edit_product_category_path(category) do  %>
       <div class="product-category-card">
+        <% if !category.photo.attachment.nil? %>
         <%= cl_image_tag category.photo.key, height: 300, width: 400, crop: :fill, class:"card-item" %>
+        <% else %>
+          No photo
+        <% end %>
         <% end %>
         <br>
         <div class="dashboard-categorie-opties">
-           <%#= link_to edit_product_category_path(category) do  %>
-              <!-- <i class="fas fa-edit fa-2x"></i> -->
-          <%# end %>
+
         <p> <%= category.naam %></p>
             <%= link_to product_category_path(category),
             method: :delete,
