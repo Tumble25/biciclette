@@ -1,1 +1,17 @@
-show.html.erb
+<h1><%= @product_category.naam %> </h1>
+    <% @product_category.products.each do |product| %>
+
+      <%= link_to product_category_product_path(@product_category, product) do  %>
+
+        <% if product.product_photos.where(profile_picture: true).any? %>
+        <%= cl_image_tag product.product_photos.where(profile_picture: true).last.photo, height: 300, width: 400, crop: :fill %>
+          <%= product.naam %>
+          <%= product.id %>
+        <% else %>
+            <%= product.naam %>
+          </div>
+        <% end %>
+
+        <% end %>
+        <% end %>
+

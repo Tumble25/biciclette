@@ -18,6 +18,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product_category = ProductCategory.find(params[:product_category_id])
+    @product = Product.find(params[:id])
+  end
+
   def edit
     @user = current_user
     @product_category = ProductCategory.find(params[:product_category_id])
@@ -28,6 +33,7 @@ class ProductsController < ApplicationController
     @user = current_user
     @product_category = ProductCategory.find(params[:product_category_id])
     @product = Product.find(params[:id])
+    binding.pry
     if @product.update(product_params)
       redirect_to edit_product_category_path(@product_category)
     else
