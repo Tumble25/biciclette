@@ -9,6 +9,8 @@
 </div>
 
 <div class="col-12">
+  <%#= tinymce_assets %>
+  <!-- <script type="text/javascript" src="/assets/tinymce.js"> -->
   <%= f.input :omschrijving, placeholder: 'Omschrijving',:input_html => {:style => 'width: 100%', :rows => 5,:class => "tinymce"}  %>
   <%#= f.text_area_tag :omschrijving, "Hello, World!", :class => "tinymce" %>
 </div>
@@ -44,3 +46,23 @@
 </div>
 </div>
 </div>
+
+<!-- <script>
+  document.addEventListener("turbolinks:load", function() {
+    // console.log("loaded")
+  tinymce.init({
+      selector: '.tinymce',
+      height: 500,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+        toolbar: 'undo redo | formatselect | ' +
+        ' bold italic backcolor | alignleft aligncenter ' +
+        ' alignright alignjustify | bullist numlist outdent indent | ' +
+        ' removeformat | help'
+    });
+});
+</script> -->

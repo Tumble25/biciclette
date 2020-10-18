@@ -9,8 +9,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/1a1aizg6ft4epmx61gac6o8zqjy659k4aulrxggnc0ziati3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
   </head>
+  <script>
+    tinymce.init({
+      selector: '.tinymce',
+      height: 500,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+        toolbar: 'undo redo | formatselect | ' +
+        ' bold italic backcolor | alignleft aligncenter ' +
+        ' alignright alignjustify | bullist numlist outdent indent | ' +
+        ' removeformat | help'
+    });
+  </script>
 
   <body>
     <%= render 'shared/navbar' %>
@@ -20,21 +37,5 @@
   </body>
 </html>
 
- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
- <script>
-   tinymce.init({
-     selector: '.tinymce',
-     height: 500,
-     menubar: false,
-     plugins: [
-       'advlist autolink lists link image charmap print preview anchor',
-       'searchreplace visualblocks code fullscreen',
-       'insertdatetime media table paste code help wordcount'
-     ],
-       toolbar: 'undo redo | formatselect | ' +
-       ' bold italic backcolor | alignleft aligncenter ' +
-       ' alignright alignjustify | bullist numlist outdent indent | ' +
-       ' removeformat | help'
-   });
- </script>
+
 
