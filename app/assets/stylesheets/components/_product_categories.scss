@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   // background-color: #fde3d7;
-  background-color: #dcebf8;
+  background-color: #FBF8E8;
   // border-radius: 50px;
   // margin: 0 10%;
   padding: 2% 5%;
@@ -43,13 +43,13 @@
   }
   .product-category-card{
     img{
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     // border-radius: 15px;
     border-radius: 50%;
-    border-style: solid;
-    border-color: white;
-    border-width: 19px;
+    // border-style: solid;
+    // border-color: white;
+    // border-width: 19px;
     }
     img:hover{
       // border-color: black;
@@ -60,11 +60,12 @@
     // }
     }
     .product-category-card-name{
-      color: black;
-    background-color: white;
+      color: rgb(49, 80, 162);
+    // background-color: white;
     border-radius: 20px;
     margin-top: 10px;
     padding: 10px;
+    text-decoration: underline;
     }
   }
 }
