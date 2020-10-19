@@ -1,3 +1,8 @@
+// .container-slogan{
+//   background-color: #fde3d7;
+//   color: #3057a7;
+// }
+
 .card-item-no-product-category-image{
   height: 300;
   width: 400;
@@ -19,9 +24,10 @@
 .product-categories-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: #d1d1f9;
-  border-radius: 50px;
-  margin: 0 10%;
+  // background-color: #fde3d7;
+  background-color: #dcebf8;
+  // border-radius: 50px;
+  // margin: 0 10%;
   padding: 2% 5%;
   a{
     text-decoration: none !important;
