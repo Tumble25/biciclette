@@ -1,4 +1,5 @@
 class ProductCategoriesController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
 
   def index
     @user = current_user
