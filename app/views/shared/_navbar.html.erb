@@ -13,7 +13,7 @@
       <% ProductCategory.all.each do |category| %>
       <li class="nav-item navbar-home-item landing-page-navbar-right-item">
         <div class="nav-link">
-          <%= category.naam %>
+          <%= link_to category.naam, product_category_path(category) %>
         </div>
       </li>
 

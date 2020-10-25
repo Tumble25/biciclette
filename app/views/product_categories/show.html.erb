@@ -14,14 +14,15 @@
 <% @product_category.products.each do |product| %>
 
 <div class="product-card">
-
 <%= link_to product_category_product_path(@product_category, product) do  %>
 <% if product.product_photos.where(profile_picture: true).any? %>
-<%= cl_image_tag product.product_photos.where(profile_picture: true).last.photo, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag product.product_photos.where(profile_picture: true).last.photo, height: 200, crop: :fill %>
 <%= product.naam %>
 <%= product.id %>
 <% else %>
-<%= product.naam %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  Breakfast
+</div>
 </div>
 <% end %>
 <% end %>

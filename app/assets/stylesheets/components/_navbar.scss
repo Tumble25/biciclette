@@ -4,7 +4,10 @@
   background-color: rgb(250, 247, 238);
   // background-color:#FBF8E8;
   .nav-link{
+    a{
     color: #7A7B7F !important;
+      text-decoration:none;
+    }
   }
   .landing-page-logo{
     margin-right: 20px;
