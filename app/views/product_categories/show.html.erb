@@ -9,24 +9,28 @@
 </div>
 
 
+<!-- test -->
 
-<div class="product-cards-container">
+<div class="product-cards-container" id="product-category-products-overview">
 <% @product_category.products.each do |product| %>
 
-<div class="product-card">
-<%= link_to product_category_product_path(@product_category, product) do  %>
-<% if product.product_photos.where(profile_picture: true).any? %>
-<%= cl_image_tag product.product_photos.where(profile_picture: true).last.photo, height: 200, crop: :fill %>
-<%= product.naam %>
-<%= product.id %>
-<% else %>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  Breakfast
+<div class="card-trip">
+  <% if product.product_photos.any? %>
+  <%= cl_image_tag product.product_photos.last.photo %>
+  <% end %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= product.naam %></h2>
+      <p><%= simple_format(product.omschrijving) %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= number_to_currency(product.prijs, unit: "€", separator: ",", delimiter: "")%></h2>
+  </div>
 </div>
-</div>
-<% end %>
-<% end %>
-</div>
-<% end %>
 
+<% end %>
 </div>
+<!-- test -->
+
+
+
+
