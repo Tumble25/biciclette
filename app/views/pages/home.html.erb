@@ -27,30 +27,15 @@
 
 
 
-<div class="product-categories-container">
-  <% ProductCategory.all.each do |category| %>
-  <%= link_to product_category_path(category) do %>
-  <div class="product-category-box">
-  <div class="product-category-card">
-    <% if !category.photo.attachment.nil? %>
-    <%= cl_image_tag category.photo.key, height: 300, width: 400, crop: :fill, class:"card-item" %>
-    <% else %>
-      No photo
-    <% end %>
-    <p><b class="product-category-card-name"><%= category.naam %></b></p>
-  </div>
-  </div>
-  <% end %>
-  <% end %>
-</div>
-</div>
 
 <!-- test -->
 <div class="product-cards-container">
 <% ProductCategory.all.each do |category| %>
+<%= link_to product_category_path(category) do %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(' <%= cl_image_path category.photo.key  %> ')">
   <%= category.naam %>
 </div>
+<% end %>
 <% end %>
 </div>
 <!-- test -->
