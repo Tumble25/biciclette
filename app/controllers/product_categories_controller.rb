@@ -52,7 +52,7 @@ class ProductCategoriesController < ApplicationController
 
   private
   def product_category_params
-    params.require(:product_category).permit(:id, :naam, :photo,
+    params.require(:product_category).permit(:id, :naam, :photo, :banner,
       products_attributes: [:id, :naam, :omschrijving, :prijs])
   end
 end
