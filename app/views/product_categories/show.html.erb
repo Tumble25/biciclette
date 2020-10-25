@@ -1,11 +1,14 @@
-<div class="banner-container">
+<div class="banner-container-product">
+  <!-- test -->
+
+
+  <!-- test -->
   <% if !@product_category.banner.attachment.nil? %>
-<div class="banner" id="banner-product" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0)), url('<%= cl_image_path @product_category.banner.key %>');">
-  <div class="container">
-    <h1><%= @product_category.naam %></h1>
+  <div class="banner-product-avatar-container">
+    <%= cl_image_tag @product_category.banner.key, class:"avatar-product" %>
+    <% end %>
+    <p><%= @product_category.naam %></p>
   </div>
-</div>
-<% end %>
 </div>
 
 
