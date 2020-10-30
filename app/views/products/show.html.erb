@@ -8,7 +8,7 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <% number = 0 %>
-    <% @product.product_photos.each do |pic| %>
+    <% @product.product_photos.order(:profile_picture).reverse.each do |pic| %>
     <% if number == 0 %>
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <% number += 1 %>

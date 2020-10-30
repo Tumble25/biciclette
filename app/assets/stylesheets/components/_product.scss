@@ -2,7 +2,7 @@
   background-color: #faf7ee;
   display: flex;
   justify-content: center;
-  height: 900px;
+  min-height: 900px;
   padding: 5% 15%;
   .product-item-card{
     // height: 400px;
@@ -16,4 +16,10 @@
 
 #card-product-trip{
   height: auto;
+  width: 100%;
+}
+
+.carousel-inner .active{
+  display: flex;
+  justify-content: center;
 }
