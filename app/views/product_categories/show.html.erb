@@ -17,6 +17,7 @@
 <div class="product-cards-container" id="product-category-products-overview">
 <% @product_category.products.each do |product| %>
 
+<%= link_to product_category_product_path(@product_category, product) do %>
 <div class="card-trip">
   <% if product.product_photos.any? %>
   <%= cl_image_tag product.product_photos.last.photo %>
@@ -34,6 +35,7 @@
     </div>
 </div>
 
+<% end %>
 <% end %>
 </div>
 <!-- test -->
