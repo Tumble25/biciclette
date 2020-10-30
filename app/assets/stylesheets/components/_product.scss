@@ -22,11 +22,18 @@
 .carousel-inner .active{
   display: flex;
   justify-content: center;
-  // img{
-  //   height: 100%;
-  // }
+  padding: 5%;
+  height: 400px;
+  img{
+    height: 100%;
+  }
 }
 
 .card-product-trip-image{
   height: 400px;
+  background-color: #8ca89a;
+  // padding: 5%;
+  img{
+    height: fit-content;
+  }
 }
