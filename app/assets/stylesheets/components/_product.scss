@@ -1,0 +1,19 @@
+.product-item-container{
+  background-color: #faf7ee;
+  display: flex;
+  justify-content: center;
+  height: 900px;
+  padding: 5% 15%;
+  .product-item-card{
+    // height: 400px;
+    width: 400px;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    background-color: white;
+  }
+}
+
+#card-product-trip{
+  height: auto;
+}

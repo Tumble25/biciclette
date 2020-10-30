@@ -1,5 +1,10 @@
 <div class="banner-container-product"></div>
+<div class="product-item-container">
 
+<!-- <div class="product-cards-container" id="product-category-products-overview"> -->
+<div class="card-trip" id="card-product-trip">
+
+  <!-- picture rotation -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <% number = 0 %>
@@ -39,16 +44,19 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<!-- end picture rotation -->
 
-<h1><%=@product.naam %></h1>
-
-<p>product: <%= @product.naam %></p>
-omschrijving:
-
-<%= simple_format(@product.omschrijving) %>
-
-<p>prijs: <%= @product.prijs %></p>
-
-
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @product.naam %></h2>
+    </div>
+    <h2 class="card-trip-pricing"><%= number_to_currency(@product.prijs, unit: "€", separator: ",", delimiter: "")%></h2>
+  </div>
+    <div class="card-trip-infos" id="description-card">
+      <div class="card-trip-infos-editor">
+      <p><%= simple_format(@product.omschrijving) %></p>
+      </div>
+    </div>
+<!-- </div> -->
 
 
