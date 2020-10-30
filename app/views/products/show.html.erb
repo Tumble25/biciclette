@@ -6,7 +6,7 @@
 
   <!-- picture rotation -->
   <div class="card-product-trip-image">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
   <ol class="carousel-indicators">
     <% number = 0 %>
     <% @product.product_photos.order(:profile_picture).reverse.each do |pic| %>
@@ -62,3 +62,5 @@
 <!-- </div> -->
 
 
+<script>
+</script>
