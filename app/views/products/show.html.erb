@@ -9,7 +9,13 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
   <ol class="carousel-indicators">
     <% number = 0 %>
-    <% @product.product_photos.order(:profile_picture).reverse.each do |pic| %>
+    <%# @product.product_photos.where(profile_picture: true).each do |pic| %>
+    <%# if pic.profile_picture? %>
+      <!-- <li data-target="#carouselExampleIndicators" data-slide-to="<%= number %>" class="active"></li> -->
+      <%# number =+ 1 %>
+    <%# end %>
+    <%# end %>
+    <% @product.product_photos.reverse.each do |pic| %>
     <% if number == 0 %>
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <% number += 1 %>
@@ -21,15 +27,29 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <% count = 0 %>
-    <% @product.product_photos.each do |photo| %>
+    <% @product.product_photos.where(profile_picture:true).each do |photo| %>
     <% if count == 0 %>
-      <div class="carousel-item active">
+      <div class="carousel-item test-image active">
          <%= cl_image_tag photo.photo ,class: "d-block img-fluid" %>
         <!-- <img class="d-block img-fluid" src="..." alt="First slide"> -->
       </div>
       <% count += 1 %>
       <% else %>
-      <div class="carousel-item">
+      <div class="carousel-item test-image">
+         <%= cl_image_tag photo.photo ,class: "d-block img-fluid" %>
+        <!-- <img class="d-block img-fluid" src="..." alt="First slide"> -->
+      </div>
+      <% end %>
+    <% end %>
+    <% @product.product_photos.where(profile_picture:false).each do |photo| %>
+    <% if count == 0 %>
+      <div class="carousel-item test-image active">
+         <%= cl_image_tag photo.photo ,class: "d-block img-fluid" %>
+        <!-- <img class="d-block img-fluid" src="..." alt="First slide"> -->
+      </div>
+      <% count += 1 %>
+      <% else %>
+      <div class="carousel-item test-image">
          <%= cl_image_tag photo.photo ,class: "d-block img-fluid" %>
         <!-- <img class="d-block img-fluid" src="..." alt="First slide"> -->
       </div>
